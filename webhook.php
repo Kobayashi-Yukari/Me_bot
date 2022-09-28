@@ -1,6 +1,5 @@
 <?php
 require_once('./LINEBotTiny.php');
-require_once('./db_connect.php');
 
 $channelAccessToken = 'ZVl4G9PbMVNOGnDQSFPvCH9+cooj0wsEqjaT9MvrlGtcSt4xHEmU6bIfGwyFfX8Fl3/sqBTjSXsukYEdvT+eA4ePsDEZ1Jm8AHfxLRNdH0eA/1Q1raZlo4Jdk40iGhTcNjEn7UAsuSrEyJl5dL94ngdB04t89/1O/w1cDnyilFU=';
 $channelSecret = '9618a4470eb85b12b102e467093ece8b';
@@ -25,23 +24,37 @@ foreach ($client->parseEvents() as $event) {
 			replyMessage($client, $event['replyToken'], $messages);
 
                 } elseif ($message['text'] == '実はバンギャなので、追っかけしています。') {
+
 			require_once('./carousel.php');
-		//	replyMessage($client, $event['replyToken'], $messages);
+
                 } elseif ($message['text'] == '好きな声優さんを教えて！') {
 
 			require_once('./click_reply_seiyu.php');
 			replyMessage($client, $event['replyToken'], $messages);
 
                 } elseif ($message['text'] == '好きなアニメと漫画を教えて！') {
+
+			require_once('./anime.php');
+			replyMessage($client, $event['replyToken'], $messages);
+
+                } elseif ($message['text'] == '柴犬の「ぱん」ちゃんを飼っています') {
+
+
                     $client->replyMessage(array(
                         'replyToken' => $event['replyToken'],
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' => 'aws'
+                                'text' => '我が家のアイドルです'
+                            ),
+                            array(
+                                'type' => 'image',
+                                'originalContentUrl' => 'https://pompon-blog.com/me_bot/images/1024x1024isi.png',
+                                'previewImageUrl' => 'https://pompon-blog.com/me_bot/images/1024x1024isi.png',
                             )
                         )
                     ));
+
                 } else {
                     $client->replyMessage(array(
                         'replyToken' => $event['replyToken'],
