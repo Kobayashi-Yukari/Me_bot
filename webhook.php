@@ -28,15 +28,10 @@ foreach ($client->parseEvents() as $event) {
 			require_once('./carousel.php');
 		//	replyMessage($client, $event['replyToken'], $messages);
                 } elseif ($message['text'] == '好きな声優さんを教えて！') {
-                    $client->replyMessage(array(
-                        'replyToken' => $event['replyToken'],
-                        'messages' => array(
-                            array(
-                                'type' => 'text',
-                                'text' => 'aws'
-                            )
-                        )
-                    ));
+
+			require_once('./click_reply_seiyu.php');
+			replyMessage($client, $event['replyToken'], $messages);
+
                 } elseif ($message['text'] == '好きなアニメと漫画を教えて！') {
                     $client->replyMessage(array(
                         'replyToken' => $event['replyToken'],
