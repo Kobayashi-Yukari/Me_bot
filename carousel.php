@@ -1,8 +1,26 @@
 <?php 
+
+require_once('./db_connect.php');
+//DB処理
+
+$sql = "SELECT url FROM mucc ORDER BY RAND() LIMIT 1";
+$results = $dbh->query($sql);
+$mucc_playlist = $results->fetchAll(PDO::FETCH_COLUMN);
+
+$sql = "SELECT url FROM girugamesh ORDER BY RAND() LIMIT 1";
+$results = $dbh->query($sql);
+$girgamesh_playlist = $results->fetchAll(PDO::FETCH_COLUMN);
+
+
+$sql = "SELECT url FROM mix_artist ORDER BY RAND() LIMIT 1";
+$results = $dbh->query($sql);
+$mix_artist_playlist = $results->fetchAll(PDO::FETCH_COLUMN);
+
 $accessToken = 'ZVl4G9PbMVNOGnDQSFPvCH9+cooj0wsEqjaT9MvrlGtcSt4xHEmU6bIfGwyFfX8Fl3/sqBTjSXsukYEdvT+eA4ePsDEZ1Jm8AHfxLRNdH0eA/1Q1raZlo4Jdk40iGhTcNjEn7UAsuSrEyJl5dL94ngdB04t89/1O/w1cDnyilFU=';
 
 $jsonString = file_get_contents('php://input'); error_log($jsonString); 
-$jsonObj = json_decode($jsonString); $message = $jsonObj->{"events"}[0]->{"message"}; 
+$jsonObj = json_decode($jsonString); 
+$message = $jsonObj->{"events"}[0]->{"message"}; 
 $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
 
 
@@ -15,18 +33,13 @@ $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
             'columns' => [ 
                 [ 
                     'title' => 'MUCC', 
-                    'text' => 'かれこれ20年間ファンです',
+                    'text' => '人生の半分は彼らに注いでいます',
 	             'thumbnailImageUrl' => 'https://pompon-blog.com/me_bot/images/1024x1024isi.png', 
                      'actions' => [
-                         [
-                            'type' => 'postback',
-                             'label' => 'webhookにpost送信',
-                             'data' => 'value'
-                         ],
                          [ 
                             'type' => 'uri', 
-                            'label' => 'プレイリストはこちら',
-                             'uri' => 'https://open.spotify.com/playlist/1S5QjfTTzAyJjBOTWhR0QW',
+                            'label' => '彼らの勇姿はコチラから',
+                             'uri' => $mucc_playlist[0],
                          ] 
                     ] 
                 ],
@@ -35,15 +48,22 @@ $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
                         'text' => '解散した今でも大好きです', 
 	                'thumbnailImageUrl' => 'https://pompon-blog.com/me_bot/images/1024x1024isi.png', 
                         'actions' => [ 
-                            [
-                                'type' => 'postback', 
-                                'label' => 'webhookにpost送信', 
-                                'data' => 'value' 
-                            ], 
                             [ 
                                 'type' => 'uri', 
-                                'label' => 'プレイリストはこちら', 
-                                'uri' => 'https://open.spotify.com/artist/2U7eU3UgrxPMlNd5w9lv73' 
+                                'label' => '彼らの勇姿はコチラから',
+                                'uri' => $girgamesh_playlist[0],
+                            ] 
+                        ] 
+                    ], 
+                 [ 
+                        'title' => '好きなアーティスト', 
+                        'text' => '振り幅大きめです', 
+	                'thumbnailImageUrl' => 'https://pompon-blog.com/me_bot/images/1024x1024isi.png', 
+                        'actions' => [ 
+                            [ 
+                                'type' => 'uri', 
+                                'label' => '何が出るでしょう？',
+                                'uri' => $mix_artist_playlist[0],
                             ] 
                         ] 
                     ], 
