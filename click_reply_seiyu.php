@@ -25,10 +25,34 @@ $messages = [
 					'type' => 'action',
 					'action' => array(
 						'type' => 'message',
-						'label' => '中村 悠一',
+						'label' => '中村悠一',
 						'text' => 'ごじょさ',
 					)
 				),
+				array(
+					'type' => 'action',
+					'action' => array(
+						'type' => 'message',
+						'label' => '緒方恵美',
+						'text' => 'ごじょさ',
+					)
+				),
+				array(
+					'type' => 'action',
+					'action' => array(
+						'type' => 'message',
+						'label' => '石田彰',
+						'text' => 'ごじょさ',
+					)
+				),  
+				array(
+					'type' => 'action',
+					'action' => array(
+						'type' => 'message',
+						'label' => '大塚明夫',
+						'text' => 'ごじょさ',
+					)
+				),  
 			)
 		)
 	]
