@@ -25,16 +25,8 @@ foreach ($client->parseEvents() as $event) {
 			replyMessage($client, $event['replyToken'], $messages);
 
                 } elseif ($message['text'] == '実はバンギャなので、追っかけしています。') {
-                    $client->replyMessage(array(
-                        'replyToken' => $event['replyToken'],
-                        'messages' => array(
-                            array(
-                                'type' => 'text',
-                                'text' => 'aws'
-                            )
-                        )
-                    ));
-
+			require_once('./carousel.php');
+		//	replyMessage($client, $event['replyToken'], $messages);
                 } elseif ($message['text'] == '好きな声優さんを教えて！') {
                     $client->replyMessage(array(
                         'replyToken' => $event['replyToken'],
