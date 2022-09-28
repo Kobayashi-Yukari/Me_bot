@@ -6,18 +6,17 @@ $jsonObj = json_decode($jsonString); $message = $jsonObj->{"events"}[0]->{"messa
 $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
 
 
- // 送られてきたメッセージの中身からレスポンスのタイプを選択 
-     // カルーセルタイプ 
+    // カルーセルタイプ 
     $messageData = [ 
         'type' => 'template', 
-        'altText' => 'カルーセル', 
+        'altText' => 'carousel', 
         'template' => [
              'type' => 'carousel', 
             'columns' => [ 
                 [ 
-                    'title' => 'カルーセル1', 
-                    'text' => 'カルーセル1です',
-	             'imageUrl' => 'https://pompon-blog.com/me_bot/images/1024x1024isi.png', 
+                    'title' => 'MUCC', 
+                    'text' => 'かれこれ20年間ファンです',
+	             'thumbnailImageUrl' => 'https://pompon-blog.com/me_bot/images/1024x1024isi.png', 
                      'actions' => [
                          [
                             'type' => 'postback',
@@ -26,15 +25,15 @@ $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
                          ],
                          [ 
                             'type' => 'uri', 
-                            'label' => '美容の口コミ広場を見る',
-                             'uri' => 'https://report.clinic/'
+                            'label' => 'プレイリストはこちら',
+                             'uri' => 'https://open.spotify.com/playlist/1S5QjfTTzAyJjBOTWhR0QW',
                          ] 
                     ] 
                 ],
                  [ 
-                        'title' => 'カルーセル2', 
-                        'text' => 'カルーセル2です', 
-	                'imageUrl' => 'https://pompon-blog.com/me_bot/images/1024x1024isi.png', 
+                        'title' => 'Girugamesh', 
+                        'text' => '解散した今でも大好きです', 
+	                'thumbnailImageUrl' => 'https://pompon-blog.com/me_bot/images/1024x1024isi.png', 
                         'actions' => [ 
                             [
                                 'type' => 'postback', 
@@ -43,8 +42,8 @@ $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
                             ], 
                             [ 
                                 'type' => 'uri', 
-                                'label' => '女美会を見る', 
-                                'uri' => 'https://jobikai.com/' 
+                                'label' => 'プレイリストはこちら', 
+                                'uri' => 'https://open.spotify.com/artist/2U7eU3UgrxPMlNd5w9lv73' 
                             ] 
                         ] 
                     ], 
