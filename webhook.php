@@ -61,6 +61,10 @@ foreach ($client->parseEvents() as $event) {
 
 			require_once('./character_carousel_05.php');
 
+                } elseif ($message['text'] == '大塚明夫さんが声優を担当したキャラクター一覧') {
+
+			require_once('./character_carousel_06.php');
+
                 } else {
                     $client->replyMessage(array(
                         'replyToken' => $event['replyToken'],
