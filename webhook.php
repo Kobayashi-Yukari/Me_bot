@@ -49,6 +49,10 @@ foreach ($client->parseEvents() as $event) {
 
 			require_once('./character_carousel_02.php');
 			
+                } elseif ($message['text'] == '中村悠一さんが声優を担当したキャラクター一覧') {
+
+			require_once('./character_carousel_03.php');
+			
                 } else {
                     $client->replyMessage(array(
                         'replyToken' => $event['replyToken'],
