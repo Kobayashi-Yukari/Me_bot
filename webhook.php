@@ -53,6 +53,9 @@ foreach ($client->parseEvents() as $event) {
 
 			require_once('./character_carousel_03.php');
 			
+                } elseif ($message['text'] == '緒方恵美さんが声優を担当したキャラクター一覧') {
+
+			require_once('./character_carousel_04.php');
                 } else {
                     $client->replyMessage(array(
                         'replyToken' => $event['replyToken'],
