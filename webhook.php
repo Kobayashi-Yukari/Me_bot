@@ -39,22 +39,16 @@ foreach ($client->parseEvents() as $event) {
 
                 } elseif ($message['text'] == '柴犬の「ぱん」ちゃんを飼っています') {
 
+			require_once('./dog_image.php');
+			
+                } elseif ($message['text'] == '津田健次郎さんが声優を担当したキャラクター一覧') {
 
-                    $client->replyMessage(array(
-                        'replyToken' => $event['replyToken'],
-                        'messages' => array(
-                            array(
-                                'type' => 'text',
-                                'text' => '我が家のアイドルです'
-                            ),
-                            array(
-                                'type' => 'image',
-                                'originalContentUrl' => 'https://pompon-blog.com/me_bot/images/1024x1024isi.png',
-                                'previewImageUrl' => 'https://pompon-blog.com/me_bot/images/1024x1024isi.png',
-                            )
-                        )
-                    ));
+			require_once('./character_carousel_01.php');
+			
+                } elseif ($message['text'] == '山寺宏一さんが声優を担当したキャラクター一覧') {
 
+			require_once('./character_carousel_02.php');
+			
                 } else {
                     $client->replyMessage(array(
                         'replyToken' => $event['replyToken'],
