@@ -56,6 +56,11 @@ foreach ($client->parseEvents() as $event) {
                 } elseif ($message['text'] == '緒方恵美さんが声優を担当したキャラクター一覧') {
 
 			require_once('./character_carousel_04.php');
+
+                } elseif ($message['text'] == '石田彰さんが声優を担当したキャラクター一覧') {
+
+			require_once('./character_carousel_05.php');
+
                 } else {
                     $client->replyMessage(array(
                         'replyToken' => $event['replyToken'],
