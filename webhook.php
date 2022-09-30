@@ -65,6 +65,83 @@ foreach ($client->parseEvents() as $event) {
 
 			require_once('./character_carousel_06.php');
 
+                } elseif ($message['text'] == '小林由香利(Kobayashi Yukari)') {
+
+			$client->replyMessage(array(
+			'replyToken' => $event['replyToken'],
+			'messages' => array(
+			    array(
+				'type' => 'text',
+				'text' => 'こんな顔しています',
+			    ),
+			    array(
+			    'type' => 'image',
+				'originalContentUrl' => 'https://pompon-blog.com/me_bot/images/i.JPG',
+				'previewImageUrl' => 'https://pompon-blog.com/me_bot/images/i.jpg',
+			    ),
+			)
+			));
+			replyMessage($client, $event['replyToken'], $messages);
+
+                } elseif ($message['text'] == '石川県生まれ') {
+			
+                        $client->replyMessage(array(
+			'replyToken' => $event['replyToken'],
+			'messages' => array(
+			    array(
+				'type' => 'text',
+				'text' => '金沢市の端っこ、海辺に住んでいます',
+			    ),
+			    array(
+			    'type' => 'image',
+				'originalContentUrl' => 'https://pompon-blog.com/me_bot/images/address.jpg',
+				'previewImageUrl' => 'https://pompon-blog.com/me_bot/images/address.jpg',
+			    ),
+			)
+			));
+			replyMessage($client, $event['replyToken'], $messages);
+
+                } elseif ($message['text'] == '音楽/ライブ/アニメ/漫画などなど') {
+                        
+                        $client->replyMessage(array(
+			'replyToken' => $event['replyToken'],
+			'messages' => array(
+			    array(
+				'type' => 'text',
+				'text' => '今期アニメはなんといってもチェンソーマンが楽しみです',
+			    ),
+			    array(
+			    'type' => 'image',
+				'originalContentUrl' => 'https://pompon-blog.com/me_bot/images/chenso.png',
+				'previewImageUrl' => 'https://pompon-blog.com/me_bot/images/chenso.png',
+			    ),
+			)
+			));
+			replyMessage($client, $event['replyToken'], $messages);
+
+
+                } elseif ($message['text'] == '臨床工学技士やってました！') {
+
+                        $client->replyMessage(array(
+			'replyToken' => $event['replyToken'],
+			'messages' => array(
+			    array(
+				'type' => 'text',
+				'text' => '臨床工学技士は「命のエンジニア」とも言われます。',
+			    ),
+			    array(
+			    'type' => 'image',
+				'originalContentUrl' => 'https://pompon-blog.com/me_bot/images/me.png',
+				'previewImageUrl' => 'https://pompon-blog.com/me_bot/images/me.png',
+			    ),
+			    array(
+				'type' => 'text',
+				'text' => '写真のようにオペ室で患者さんの生命の維持に関連する機械を操作したり、保守点検などを行います',
+			    ),
+			)
+			));
+			replyMessage($client, $event['replyToken'], $messages);
+
                 } else {
                     $client->replyMessage(array(
                         'replyToken' => $event['replyToken'],
