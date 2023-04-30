@@ -148,7 +148,7 @@ foreach ($client->parseEvents() as $event) {
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' => $message['text']
+                                'text' => 'どんだけ〜！！！',
                             )
                         )
                     ));
@@ -160,18 +160,32 @@ foreach ($client->parseEvents() as $event) {
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' => $message['text']
+                                'text' => 'まぼろし〜〜！！',
                             )
                         )
                     ));
                     break;
-                default:
+                case 'location':
+		    $latitude = $event['message']['latitude'];
+		    $longitude = $event['message']['longitude'];
+		    
+		    $client->replyMessage(array(
+			'replyToken' => $event['replyToken'],
+			'messages' => array(
+			    array(
+				'type' => 'text',
+				'text' => "緯度: {$latitude}\n経度: {$longitude}",
+			    )
+			)
+		    ));
+		    break;
+				default:
                     $client->replyMessage(array(
                         'replyToken' => $event['replyToken'],
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' => 'MUCCってバンドはサイコーよ！'
+                                'text' => 'どんだけ〜！！！'
                             )
                         )
                     ));
