@@ -33,12 +33,12 @@ $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
             'columns' => [ 
                 [ 
                     'title' => 'MUCC', 
-                    'text' => '人生の半分は彼らに注いでいます',
-	             'thumbnailImageUrl' => 'https://pompon-blog.com/me_bot/images/1024x1024isi.png', 
+                    'text' => 'MUCCに出会い人生が変わりました',
+	             'thumbnailImageUrl' => 'https://pompon-blog.com/me_bot/images/logo_images/mucc_logobonji.png', 
                      'actions' => [
                          [ 
                             'type' => 'uri', 
-                            'label' => '彼らの勇姿はコチラから',
+                            'label' => '彼らの音楽はコチラから',
                              'uri' => $mucc_playlist[0],
                          ] 
                     ] 
@@ -46,7 +46,7 @@ $replyToken = $jsonObj->{"events"}[0]->{"replyToken"};
                  [ 
                         'title' => 'Girugamesh', 
                         'text' => '解散した今でも大好きです', 
-	                'thumbnailImageUrl' => 'https://pompon-blog.com/me_bot/images/1024x1024isi.png', 
+	                'thumbnailImageUrl' => 'https://pompon-blog.com/me_bot/images/logo_images/girugamesh_logo.png', 
                         'actions' => [ 
                             [ 
                                 'type' => 'uri', 
