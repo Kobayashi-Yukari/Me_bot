@@ -6,9 +6,15 @@ $array = array(
 'https://pompon-blog.com/me_bot/images/dog_images/IMG_1795.JPG',
 'https://pompon-blog.com/me_bot/images/dog_images/IMG_1798.JPG',
 'https://pompon-blog.com/me_bot/images/dog_images/IMG_1850.JPG',
-'https://pompon-blog.com/me_bot/images/dog_images/IMG_1900JPG',
+'https://pompon-blog.com/me_bot/images/dog_images/IMG_1900.JPG',
 'https://pompon-blog.com/me_bot/images/dog_images/IMG_1963.JPG',
 'https://pompon-blog.com/me_bot/images/dog_images/IMG_2752.JPG',
+'https://pompon-blog.com/me_bot/images/dog_images/IMG_1148.JPG',
+'https://pompon-blog.com/me_bot/images/dog_images/IMG_3082.JPG',
+'https://pompon-blog.com/me_bot/images/dog_images/IMG_2752.JPG',
+'https://pompon-blog.com/me_bot/images/dog_images/IMG_2730.JPG',
+'https://pompon-blog.com/me_bot/images/dog_images/IMG_2290.JPG',
+'https://pompon-blog.com/me_bot/images/dog_images/IMG_2124.JPG',
 );
 
 $rand_keys = array_rand($array, 1);
@@ -32,7 +38,7 @@ $client->replyMessage(array(
     ),
     array(
 	'type' => 'text',
-	'text' => 'タップする度に画像が変わるよ',
+	'text' => 'タップする度に画像が変わるよ!',
     ),
 )
 ));
