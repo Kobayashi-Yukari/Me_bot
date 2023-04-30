@@ -18,7 +18,7 @@ $messages = [
 					'action' => array(
 						'type' => 'message',
 						'label' => '出身地',
-						'text' => '石川県金沢市生まれ',
+						'text' => '石川県生まれ',
 					)
 				),
 				array(
@@ -26,15 +26,15 @@ $messages = [
 					'action' => array(
 						'type' => 'message',
 						'label' => '趣味',
-						'text' => 'DIY,アニメ見たり,旅行,プログラミングで便利なもの作ったり。',
+						'text' => '音楽/ライブ/アニメ/漫画などなど',
 					)
 				),
 				array(
 					'type' => 'action',
 					'action' => array(
 						'type' => 'message',
-						'label' => 'おいくつ?',
-						'text' => 'まだ、33歳',
+						'label' => 'ペット',
+						'text' => '柴犬の「ぱん」ちゃんを飼っています',
 					)
 				),
 				array(
